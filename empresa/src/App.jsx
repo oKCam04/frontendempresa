@@ -5,6 +5,9 @@ import Login from "./pages/Usuarios/Pages/Login"
 import Register from "./pages/Usuarios/Pages/Register"
 import Dashboard from "./pages/Usuarios/Pages/Dashboard"
 import Logout from "./pages/Usuarios/Pages/Logout"
+import ListarProductos from "./pages/Productos/Pages/ListarProductos";
+import RegistrarProductos from "./pages/Productos/Pages/RegistrarProductos";
+import EditarProductos from "./pages/Productos/Pages/EditarProductos";
 function App() {
   const { isAuthenticated } = useAuth();
 
@@ -16,6 +19,9 @@ function App() {
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/dashboard" element={isAuthenticated ? <Dashboard/> : <Navigate to="/login"/>}></Route>
         <Route path="/logout" element={isAuthenticated ? <Logout/> : <Navigate to="/login"/>}></Route>
+        <Route path="/listar" element={isAuthenticated ? <ListarProductos/> : <Navigate to="/login"/>}></Route>
+        <Route path="/registrar" element={isAuthenticated ? <RegistrarProductos/> : <Navigate to="/login"/>}></Route>
+        <Route path="/editar/:id" element={isAuthenticated ? <EditarProductos/> : <Navigate to="/login"/>}></Route>
       </Routes>
     </Router>
   )

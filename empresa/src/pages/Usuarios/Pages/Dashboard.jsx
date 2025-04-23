@@ -7,7 +7,6 @@ function Dashboard() {
     const [token, setToken] = useState(null);
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
-        console.log("Token almacenado:", storedToken);
         setToken(storedToken);
         if (storedToken) {
             listUser(storedToken);

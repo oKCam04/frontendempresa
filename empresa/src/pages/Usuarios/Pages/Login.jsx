@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+
 function Login(){
     const [correo, setCorreo] = useState("");
     const [contrasena, setContrasena] = useState("");
@@ -31,6 +32,7 @@ function Login(){
                 <input type="email" placeholder="Escriba su email" onChange={(e)=>setCorreo(e.target.value)} />
                 <input type="password" onChange={(e)=>setContrasena(e.target.value)} />
                 <button type="submit">Login</button>
+                <button type="button" onClick={() => navigate("/")}>Regresar</button>
             </form>
         </div>
     )

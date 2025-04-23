@@ -1,7 +1,7 @@
-
-
+import {useAuth} from '../pages/Usuarios/context/AuthContext';
+import { Link } from 'react-router-dom';
 function Navbar(){
-    
+    const {logout}=useAuth();
     
     return(
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,13 +12,16 @@ function Navbar(){
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
          <li class="nav-item active">
-         <a class="nav-link" href="#">Home</a>
+          <Link class="nav-link" tabindex="-1" to="/dashboard">Home</Link>
         </li>
         <li class="nav-item">
-         <a class="nav-link" href="#">Listado Productos</a>
+         <Link class="nav-link " tabindex="-1" to="/listar">Listado Productos</Link>
         </li>
         <li class="nav-item">
-         <a class="nav-link" href="/logout" >Cerrar Sesión</a>
+          <Link class="nav-link " tabindex="-1" to="/registrar">Registrar Productos</Link>
+        </li>
+        <li class="nav-item">
+         <button onClick={logout}>Cerrar Sesion</button>
         </li>
         {/* <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
